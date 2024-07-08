@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    
+}
+
+.box span{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(240px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,rgba(0, 0, 0, 0.281));
+   }
+
+.box span::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+
+}
+
+.box span img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
